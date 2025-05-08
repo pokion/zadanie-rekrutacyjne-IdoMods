@@ -1,0 +1,11 @@
+section#featuredProducts{
+	padding: 96px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 42px;
+}
+section#featuredProducts>.title{
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}

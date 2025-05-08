@@ -1,0 +1,41 @@
+@font-face{
+	font-family: 'forma';
+	src: url('./forma.ttf?8mdicq') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'forma' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-Arrow:before {
+  content: "\e900";
+}
+.icon-Chevron_down:before {
+  content: "\e901";
+}
+.icon-Chevron_right:before {
+  content: "\e902";
+}
+.icon-Close:before {
+  content: "\e903";
+}
+.icon-Forma_icon:before {
+  content: "\e904";
+}
+.icon-Icon_favorite:before {
+  content: "\e905";
+}
+.icon-Icon_user:before {
+  content: "\e906";
+}
+.icon-Menu_hamburger:before {
+  content: "\e907";
+}

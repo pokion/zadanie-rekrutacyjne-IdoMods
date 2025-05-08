@@ -1,0 +1,26 @@
+section#home{
+	height: 100vh;
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 80px;
+}
+section#home>figure{
+	box-sizing: border-box;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 42px;
+}
+section#home>figure>img{
+	height: 138px;
+	align-self: flex-start;
+}
+.bannerImage{
+	height: 100%;
+	background: url('./../static/mainBannerImage.jpg');
+	background-size: cover;
+	background-position: center;
+	border-radius: 8px;
+}
