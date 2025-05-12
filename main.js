@@ -1,40 +1,44 @@
 'use strict';
 let swiper;
+let hasScrolled90Percent = false;
 
-function getRandomInt(maxValue){
-	return Math.floor(Math.random() * maxValue);
-}
-
-async function appednAllFeaturedProducts(){
-	const products = await getData(1,14);
-	const swiperWrapper = document.querySelector('#featuredWrapper');
-	for(let product of products.data){
-		let randomInt = getRandomInt(3);
-		const productTemplate = `<div class="swiper-slide">
-									<div class="productImage card">
-										<span class="icon-Icon_favorite favorite"></span>
-										${randomInt == 2 ? '<span class="bestSeller tag">Bestseller</span>' : ''}
-										${randomInt == 0 ? '<span class="limitedEdition tag">Limited edition</span>' : ''}
-										<img src="${product.image}">
-									</div>
-									<div class="productText">
-										<p class="large">${product.text}</p>
-										<p>€300,00 EUR</p>
-									</div>
-								</div>`;
-		swiperWrapper.appendChild(createElement(productTemplate));
-	}
+window.onload = async ()=>{
+	await appednAllFeaturedProducts()
 	swiper = new Swiper('.swiper', {
 				navigation: {
 				  nextEl: '.swiper-button-next',
 				  prevEl: '.swiper-button-prev',
 				},
-				slidesPerView: 4,
+				breakpoints: {
+					600: {
+						slidesPerView: 4,
+					}
+				},
+				slidesPerView: 1,
 				spaceBetween: 24,
 				scrollbar: {
 				  el: '.swiper-scrollbar',
 				},
 			});
+	await productListing();
 }
 
-appednAllFeaturedProducts()
+async function checkScrollPercentage() {
+    const documentHeight = document.documentElement.scrollHeight;
+    const viewportHeight = window.innerHeight;
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
+    const scrolledToEnd = scrollPosition + viewportHeight;
+    const scrollPercentage = (documentHeight > viewportHeight)
+        ? (scrolledToEnd / documentHeight) * 100
+        : 0;
+
+    if (scrollPercentage >= 90 && !hasScrolled90Percent) {
+        hasScrolled90Percent = true;
+        await productListing();
+
+    } else if (scrollPercentage < 90 && hasScrolled90Percent) {
+        hasScrolled90Percent = false;
+    }
+}
+
+window.addEventListener('scroll', checkScrollPercentage);

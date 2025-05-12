@@ -1,8 +1,12 @@
-header{
+header,.header{
 	background: var(--primary-white);
 	display: flex;
 	justify-content: space-between;
 	padding: 32px 0;
+	padding-right: 42px;
+	position: fixed;
+	width: calc(100% - 84px);
+	z-index: 100;
 }
 header>div,nav{
 	display: flex;
@@ -16,4 +20,11 @@ nav>a{
 }
 nav>a:hover{
 	border-bottom: var(--border-width) var(--border-style) var(--primary-main-color);
+	box-sizing: border-box;
+}
+.header{
+	position: relative !important;
+}
+.mobileMenu{
+	
 }

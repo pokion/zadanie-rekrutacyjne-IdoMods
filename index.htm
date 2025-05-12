@@ -14,20 +14,35 @@
 </head>
 <body>
 	<section id="home">
+		<div class="header"></div>
 		<header>
 			<div class="left">
 				<span class="icon-Forma_icon"></span>
 				<p>Forma’sint.</p>
-				<p>idomods &lt;/&gt;</p>	
+				<p class="hideOnMobile">idomods &lt;/&gt;</p>	
 			</div>
-			<nav>
+			<nav class="hideOnMobile">
 				<a href="#home">home</a>
 				<a href="#featuredProducts">featured products</a>
 				<a href="#productListing">product listing</a>
 			</nav>
-			<div class="right">
+			<nav class="showOnMobile mobileMenu">
+				<div class="content">
+					<div class="header">
+					
+					</div>
+					<a href="#home">home</a>
+					<a href="#featuredProducts">featured products</a>
+					<a href="#productListing">product listing</a>
+				</div>
+			</nav>
+			<div class="right hideOnMobile">
 				<span class="icon-Icon_user"></span>
 				<p>frontend developer</p>
+			</div>
+			<div class="right showOnMobile">
+				<span class="icon-Menu_hamburger"></span>
+				<p>menu</p>
 			</div>
 		</header>
 
@@ -52,12 +67,24 @@
 		</div>
 	</section>
 
-	<main>
-		
+	<main id="productListing">
+		<div class="headline">
+			<p>Number of products per page</p>
+			<select id="numbersOfProducts">
+				<option value="14">14</option>
+				<option value="24">24</option>
+				<option value="36">36</option>
+			</select>
+		</div>
+		<article class="products">
+
+		</article>
 	</main>
 
 	<script type="text/javascript" src="./static/swiper.min.js"></script>
+	<script type="text/javascript" src="./js/utils.js"></script>
 	<script type="text/javascript" src="./js/data.js"></script>
+	<script type="text/javascript" src="./js/products.js"></script>
 	<script type="text/javascript" src="./main.js"></script>
 </body>
 </html>

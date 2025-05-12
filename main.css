@@ -41,12 +41,36 @@ a{
 }
 body{
 	padding: 0 42px;
+	padding-bottom: 42px;
 }
 img{
 	max-width: 100%;
 	height: auto;
 }
+select{
+	border: 0;
+}
+main{
+	display: flex;
+	gap: 64px;
+	flex-direction: column;
+}
+.headline{
+	display: flex;
+	gap: 24px;
+	flex-direction: row;
+	justify-content: center;
+}
+.headline>p{
+	display: inline;
+}
+.products{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+}
 .card{
+	padding: 20px;
 	background: var(--primary-color-grey);
 	border-radius: 6px;
 	position: relative;
@@ -82,5 +106,16 @@ img{
 	}
 	H1{
 		font-size: 32px;
+	}
+	.hideOnMobile{
+		display: none;
+	}
+	.products{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media only screen and (min-width: 600px){
+	.showOnMobile{
+		display: none;
 	}
 }
