@@ -1,6 +1,6 @@
 @font-face{
 	font-family: 'forma';
-	src: url('./forma.ttf?8mdicq') format('truetype');
+	src: url('./forma.ttf?cti9mf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -14,6 +14,23 @@
 	text-transform: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+.icon-FAV-ICONFill:before {
+  content: "\e908";
+}
+.icon-FORMA-ICONFill .path1:before {
+  content: "\e909";
+  color: rgb(29, 29, 29);
+}
+.icon-FORMA-ICONFill .path2:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(29, 29, 29);
+}
+.icon-FORMA-ICONFill .path3:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
 .icon-Arrow:before {
   content: "\e900";

@@ -1,4 +1,5 @@
-let products = [];
+'use strict';
+let productsData = [];
 
 async function appednAllFeaturedProducts(){
 	const products = await getData(1,14);
@@ -7,7 +8,7 @@ async function appednAllFeaturedProducts(){
 		let randomInt = getRandomInt(3);
 		const productTemplate = `<div class="swiper-slide">
 									<div class="productImage card">
-										<span class="icon-Icon_favorite favorite"></span>
+										<span class="icon-Icon_favorite favorite" onclick="changeIcon(this)"></span>
 										${randomInt == 2 ? '<span class="bestSeller tag">Bestseller</span>' : ''}
 										${randomInt == 0 ? '<span class="limitedEdition tag">Limited edition</span>' : ''}
 										<img src="${product.image}">
@@ -22,23 +23,21 @@ async function appednAllFeaturedProducts(){
 }
 
 async function productListing(){
-	let productsLength = products.length
+	console.log('load',productsData)
+	let productsLength = productsData.length
 	let pageSize = Number(document.querySelector('#numbersOfProducts').value);
-	console.log(Math.trunc(productsLength / pageSize) +1)
 	let pageNumber = productsLength < pageSize ? 1 : Math.trunc(productsLength / pageSize) +1;
 	let newProducts = await getData(pageNumber, pageSize);
 	const articleProducts = document.querySelector('article.products');
-
 	if(pageNumber > 1){
-		products = products.concat(newProducts.data);
+		productsData = productsData.concat(newProducts.data.slice((productsLength % pageSize)));
 	}else{
-		products = newProducts.data;
+		productsData = newProducts.data;
 	}
-	console.log(pageNumber, pageSize)
-	for(let i = productsLength; i<products.length; i++){
-		const productTemplate = `<div class="card">
-				<span class="tag">ID:${products[i].id}</span>
-				<img src="${products[i].image}">
+	for(let i = productsLength; i<productsData.length; i++){
+		const productTemplate = `<div class="card" data-index="${i}" onclick="showModal(this)">
+				<span class="tag">ID:${productsData[i].id}</span>
+				<img src="${productsData[i].image}">
 			</div>`;
 		articleProducts.appendChild(createElement(productTemplate));
 	}

@@ -55,6 +55,34 @@ main{
 	gap: 64px;
 	flex-direction: column;
 }
+dialog{
+	margin: auto;
+	height: 620px;
+	width: 840px;
+	padding: 32px;
+	border: none;
+	outline: none;
+	border-radius: 8px;
+	background: var(--primary-color-grey);
+}
+dialog[open]{
+	display: flex;
+}
+dialog::backdrop{
+	background: var(--primary-main-color);
+	opacity: 0.3;
+}
+dialog>.menu{
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: calc(100% - 64px);
+}
+dialog>img{
+	height: 100%;
+	margin: auto;
+}
 .headline{
 	display: flex;
 	gap: 24px;
@@ -75,30 +103,59 @@ main{
 	border-radius: 6px;
 	position: relative;
 }
+.banner{
+	background: url('./static/BANNER.jpg');
+	background-size: cover;
+	background-position: center;
+	border-radius: 6px;
+	grid-column-start: 2;
+	grid-column-end: 4;
+	grid-row-start: 2;
+	padding: 32px 96px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.bannerButton>button{
+	padding: 12px 48px;
+	background: var(--primary-white);
+	border-radius: 6px;
+	border: 0;
+	cursor: pointer;
+	display: inline;
+}
 .card>.favorite{
+	height: 24px;
+	width: 24px;
+}
+.favorite{
 	position: absolute;
 	top: 16px;
 	right: 16px;
+	cursor: pointer;
 }
-.card>.tag{
+.close{
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+	outline: none;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+}
+.tag{
 	position: absolute;
 	top: 16px;
 	left: 16px;
-}
-.favorite{
-	height: 24px;
-	width: 24px;
-	cursor: pointer;
+	padding: 4px 12px;
+	border-radius: 1000px;
 }
 .bestSeller{
 	background: var(--label-bestseller);
 }
 .limitedEdition{
 	background: var(--label-limited-edition);
-}
-.tag{
-	padding: 4px 12px;
-	border-radius: 1000px;
 }
 @media only screen and (max-width: 600px){
 	.large{
@@ -112,6 +169,18 @@ main{
 	}
 	.products{
 		grid-template-columns: repeat(2, 1fr);
+	}
+	.banner{
+		grid-column-start: 1;
+		grid-column-end: 3;
+		grid-row-start: 3;
+		height: 498px;
+	}
+	body{
+		padding: 0 16px;
+	}
+	.banner{
+		padding: 32px 24px;
 	}
 }
 @media only screen and (min-width: 600px){

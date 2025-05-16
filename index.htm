@@ -13,6 +13,24 @@
 	<link rel="stylesheet" type="text/css" href="./css/swiperCustom.css">
 </head>
 <body>
+	<nav class="showOnMobile mobileMenu hide">
+		<div class="cover hide" id="navCover"></div>
+		<div class="content hide" id="navContent">
+			<div class="header">
+				<span class="icon-Forma_icon"></span>
+				<span id="navClose">
+					<span class="icon-Close"></span>
+					<span>close</span>
+				</span>
+			</div>
+			<div class="links">
+				<a href="#home" onclick="toggleNav()">home</a>
+				<a href="#featuredProducts" onclick="toggleNav()">featured products</a>
+				<a href="#productListing" onclick="toggleNav()">product listing</a>
+			</div>
+		</div>
+	</nav>
+
 	<section id="home">
 		<div class="header"></div>
 		<header>
@@ -26,21 +44,11 @@
 				<a href="#featuredProducts">featured products</a>
 				<a href="#productListing">product listing</a>
 			</nav>
-			<nav class="showOnMobile mobileMenu">
-				<div class="content">
-					<div class="header">
-					
-					</div>
-					<a href="#home">home</a>
-					<a href="#featuredProducts">featured products</a>
-					<a href="#productListing">product listing</a>
-				</div>
-			</nav>
 			<div class="right hideOnMobile">
 				<span class="icon-Icon_user"></span>
 				<p>frontend developer</p>
 			</div>
-			<div class="right showOnMobile">
+			<div class="right showOnMobile" onclick="toggleNav()">
 				<span class="icon-Menu_hamburger"></span>
 				<p>menu</p>
 			</div>
@@ -70,21 +78,42 @@
 	<main id="productListing">
 		<div class="headline">
 			<p>Number of products per page</p>
-			<select id="numbersOfProducts">
+			<select id="numbersOfProducts" onchange="productListing()">
 				<option value="14">14</option>
 				<option value="24">24</option>
 				<option value="36">36</option>
 			</select>
 		</div>
 		<article class="products">
-
+			<div class="banner">
+				<div class="text">
+					<p>Forma’sint.</p>
+					<h1>You'll look and feel like the champion.</h1>
+				</div>
+				<div class="bannerButton">
+					<button>Check this out <span class="icon-Chevron_right"></span></button>
+				</div>
+			</div>
 		</article>
 	</main>
 
+	<dialog>
+		<div class="menu">
+			<span>ID:<span id="modalId"></span></span>
+			<button class="close" onclick="closeModal()">
+				<span class="icon-Close"></span>
+				<span>close</span>
+			</button>
+		</div>
+		<img src="https://brandstestowy.smallhost.pl/KURTKA_04.png">
+	</dialog>
+
 	<script type="text/javascript" src="./static/swiper.min.js"></script>
 	<script type="text/javascript" src="./js/utils.js"></script>
+	<script type="text/javascript" src="./js/mobileNav.js"></script>
 	<script type="text/javascript" src="./js/data.js"></script>
 	<script type="text/javascript" src="./js/products.js"></script>
+	<script type="text/javascript" src="./js/modal.js"></script>
 	<script type="text/javascript" src="./main.js"></script>
 </body>
 </html>

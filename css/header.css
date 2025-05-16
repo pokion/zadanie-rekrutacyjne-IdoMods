@@ -7,6 +7,7 @@ header,.header{
 	position: fixed;
 	width: calc(100% - 84px);
 	z-index: 100;
+	box-sizing: border-box;
 }
 header>div,nav{
 	display: flex;
@@ -20,11 +21,68 @@ nav>a{
 }
 nav>a:hover{
 	border-bottom: var(--border-width) var(--border-style) var(--primary-main-color);
-	box-sizing: border-box;
 }
 .header{
 	position: relative !important;
 }
 .mobileMenu{
-	
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	display: flex;
+	justify-content: flex-end;
+}
+.mobileMenu.hide{
+	width: 0;
+	overflow: hidden;
+}
+.mobileMenu>.cover{
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	background: var(--primary-main-color);
+	opacity: .8;
+	transition: all .5s linear;
+}
+.mobileMenu>.content{
+	z-index: 2;
+	background: var(--primary-white);
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	gap: 80px;
+	padding-left: 32px;
+	padding-right: 16px;
+	box-sizing: border-box;
+	transition: all .5s linear;
+}
+.content>.header{
+	padding: 24px 0;
+	width: 100%;
+}
+.content.hide{
+	transform: translateX(100%);
+	transition: all .5s linear;
+}
+.cover.hide{
+	opacity: 0;
+	transition: all .5s linear;
+}
+.links{
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+#navClose{
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+}
+@media only screen and (max-width: 600px){
+	header,.header{
+		width: calc(100% - 32px);
+	}
 }

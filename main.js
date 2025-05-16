@@ -21,6 +21,7 @@ window.onload = async ()=>{
 				},
 			});
 	await productListing();
+	window.addEventListener('scroll', checkScrollPercentage);
 }
 
 async function checkScrollPercentage() {
@@ -40,5 +41,14 @@ async function checkScrollPercentage() {
         hasScrolled90Percent = false;
     }
 }
-
-window.addEventListener('scroll', checkScrollPercentage);
+function changeIcon(element){
+	element.classList.toggle('icon-Icon_favorite')
+	element.classList.toggle('icon-FAV-ICONFill')
+}
+function hideBanner(){
+	if(localStorage.getItem('banner')){
+		document.querySelector('.banner').style.display = 'none';
+	}
+	localStorage.setItem('banner', true)
+}
+hideBanner()
