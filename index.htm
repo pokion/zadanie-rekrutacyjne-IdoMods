@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>test</title>
+	<title>Forma’sint.</title>
 	<link rel="stylesheet" type="text/css" href="./static/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="./main.css">
 	<link rel="stylesheet" type="text/css" href="./static/icons.css">
@@ -17,11 +17,13 @@
 		<div class="cover hide" id="navCover"></div>
 		<div class="content hide" id="navContent">
 			<div class="header">
-				<span class="icon-Forma_icon"></span>
-				<span id="navClose">
-					<span class="icon-Close"></span>
-					<span>close</span>
+				<span class="icon-Forma_icon">
+					<span class="icon-FORMA-ICONFill"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
 				</span>
+				<button class="close" id="navClose">
+					<span class="icon-Close"></span>
+					close
+				</button>
 			</div>
 			<div class="links">
 				<a href="#home" onclick="toggleNav()">home</a>
@@ -35,8 +37,12 @@
 		<div class="header"></div>
 		<header>
 			<div class="left">
-				<span class="icon-Forma_icon"></span>
-				<p>Forma’sint.</p>
+				<div class="logo">
+					<span class="icon-Forma_icon">
+						<span class="icon-FORMA-ICONFill"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+					</span>
+					<p>Forma’sint.</p>
+				</div>
 				<p class="hideOnMobile">idomods &lt;/&gt;</p>	
 			</div>
 			<nav class="hideOnMobile">
@@ -78,11 +84,13 @@
 	<main id="productListing">
 		<div class="headline">
 			<p>Number of products per page</p>
-			<select id="numbersOfProducts" onchange="productListing()">
-				<option value="14">14</option>
-				<option value="24">24</option>
-				<option value="36">36</option>
-			</select>
+			<div>
+				<select id="numbersOfProducts" onchange="productListing()">
+					<option value="14">14</option>
+					<option value="24">24</option>
+					<option value="36">36</option>
+				</select>
+			</div>
 		</div>
 		<article class="products">
 			<div class="banner">
@@ -102,7 +110,7 @@
 			<span>ID:<span id="modalId"></span></span>
 			<button class="close" onclick="closeModal()">
 				<span class="icon-Close"></span>
-				<span>close</span>
+				close
 			</button>
 		</div>
 		<img src="https://brandstestowy.smallhost.pl/KURTKA_04.png">

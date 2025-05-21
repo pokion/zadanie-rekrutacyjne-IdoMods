@@ -38,6 +38,10 @@
 .swiper-button-disabled{
 	opacity: 0 !important;
 }
-.swiper-scrollbar{
+.swiper-scrollbar.swiper-scrollbar-horizontal{
 	height: 1px;
+	background: var(--primary-color-grey);
+}
+.swiper-scrollbar-drag{
+	background: var(--primary-main-color);
 }

@@ -8,7 +8,7 @@ async function appednAllFeaturedProducts(){
 		let randomInt = getRandomInt(3);
 		const productTemplate = `<div class="swiper-slide">
 									<div class="productImage card">
-										<span class="icon-Icon_favorite favorite" onclick="changeIcon(this)"></span>
+										<span class="icon-Icon_favorite favorite"></span>
 										${randomInt == 2 ? '<span class="bestSeller tag">Bestseller</span>' : ''}
 										${randomInt == 0 ? '<span class="limitedEdition tag">Limited edition</span>' : ''}
 										<img src="${product.image}">
@@ -23,7 +23,7 @@ async function appednAllFeaturedProducts(){
 }
 
 async function productListing(){
-	console.log('load',productsData)
+	console.log('es')
 	let productsLength = productsData.length
 	let pageSize = Number(document.querySelector('#numbersOfProducts').value);
 	let pageNumber = productsLength < pageSize ? 1 : Math.trunc(productsLength / pageSize) +1;

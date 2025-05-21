@@ -3,7 +3,6 @@ header,.header{
 	display: flex;
 	justify-content: space-between;
 	padding: 32px 0;
-	padding-right: 42px;
 	position: fixed;
 	width: calc(100% - 84px);
 	z-index: 100;
@@ -11,7 +10,6 @@ header,.header{
 }
 header>div,nav{
 	display: flex;
-	gap: 24px;
 }
 nav{
 	gap: 42px;
@@ -19,8 +17,21 @@ nav{
 nav>a{
 	cursor: pointer;
 }
-nav>a:hover{
-	border-bottom: var(--border-width) var(--border-style) var(--primary-main-color);
+#navClose{
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+}
+.logo{
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+}
+.left{
+	gap: 32px;
+}
+.right{
+	gap: 12px;
 }
 .header{
 	position: relative !important;
@@ -76,13 +87,29 @@ nav>a:hover{
 	flex-direction: column;
 	gap: 24px;
 }
-#navClose{
-	display: flex;
-	flex-direction: row;
-	gap: 8px;
+nav>a::after{
+	content: '';
+	display: block;
+	height: 1px;
+	width: 100%;
+	background: transparent;
+	transition: all .2s linear;
+
+}
+nav>a:hover::after{
+	content: '';
+	display: block;
+	height: 1px;
+	width: 100%;
+	transition: all .2s linear;
+	background: var(--primary-main-color);
+
 }
 @media only screen and (max-width: 600px){
 	header,.header{
 		width: calc(100% - 32px);
+	}
+	.right{
+		gap: 8px;
 	}
 }

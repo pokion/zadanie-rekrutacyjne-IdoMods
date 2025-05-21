@@ -5,12 +5,14 @@
 	font-style: normal;
 	font-display: block;
 }
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"], .path1, .path2, .path3 {
 	font-family: 'forma' !important;
 	speak: never;
+  font-size: 22px;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
+  line-height: normal;
 	text-transform: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -47,8 +49,20 @@
 .icon-Forma_icon:before {
   content: "\e904";
 }
+.icon-Forma_icon:hover:before{
+  content: '';
+}
+.icon-Forma_icon>span{
+  display: none;
+}
+.icon-Forma_icon:hover>span{
+  display: inherit;
+}
 .icon-Icon_favorite:before {
   content: "\e905";
+}
+.icon-Icon_favorite:hover:before {
+  content: "\e908";
 }
 .icon-Icon_user:before {
   content: "\e906";

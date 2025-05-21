@@ -24,3 +24,8 @@ section#home>figure>img{
 	background-position: center;
 	border-radius: 8px;
 }
+@media only screen and (max-width: 600px){
+	section#home{
+		gap: 64px;
+	}
+}

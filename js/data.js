@@ -18,3 +18,5 @@ function createElement(htmlString){
 	template.innerHTML = htmlString;
 	return template.content.firstChild;
 }
+// Eric Elliott’s implementation 
+const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x);

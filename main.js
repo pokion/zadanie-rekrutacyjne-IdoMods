@@ -51,4 +51,11 @@ function hideBanner(){
 	}
 	localStorage.setItem('banner', true)
 }
-hideBanner()
+function customSelect(arrayOfCustomSelect){
+	for(let customSelect of arrayOfCustomSelect){
+		let optionsDivs = pipe(getCustomSelectOptions,createCustomOptions)(customSelect);
+		customSelect.querySelector('.selectedOption').append(optionsDivs[0].innerHTML);
+		customOptionsInteraction(optionsDivs,customSelect)
+		customSelect.querySelector('.selectOptions').append(...optionsDivs);
+	}
+}
