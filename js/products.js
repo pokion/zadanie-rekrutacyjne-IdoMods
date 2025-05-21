@@ -23,7 +23,6 @@ async function appednAllFeaturedProducts(){
 }
 
 async function productListing(){
-	console.log('es')
 	let productsLength = productsData.length
 	let pageSize = Number(document.querySelector('#numbersOfProducts').value);
 	let pageNumber = productsLength < pageSize ? 1 : Math.trunc(productsLength / pageSize) +1;
