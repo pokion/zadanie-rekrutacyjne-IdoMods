@@ -10,7 +10,7 @@ window.onload = async ()=>{
 				  prevEl: '.swiper-button-prev',
 				},
 				breakpoints: {
-					600: {
+					1020: {
 						slidesPerView: 4,
 					}
 				},

@@ -9,7 +9,9 @@ mobileNavCover.addEventListener("click", toggleNav);
 function toggleNav(){
 	if(mobileMenu.classList.contains('hide')){
 		mobileMenu.classList.toggle('hide');
+		document.body.style.overflowY = 'hidden'
 	}else{
+		document.body.style.overflowY = ''
 		setTimeout(()=>{
 			mobileMenu.classList.toggle('hide');
 		}, 500)

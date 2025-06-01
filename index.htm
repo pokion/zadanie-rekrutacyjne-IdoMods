@@ -17,9 +17,10 @@
 		<div class="cover hide" id="navCover"></div>
 		<div class="content hide" id="navContent">
 			<div class="header">
-				<span class="icon-Forma_icon">
+				<div class="logoIcon">
+					<span class="icon-Forma_icon"></span>
 					<span class="icon-FORMA-ICONFill"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-				</span>
+				</div>
 				<button class="close" id="navClose">
 					<span class="icon-Close"></span>
 					close
@@ -37,12 +38,15 @@
 		<div class="header"></div>
 		<header>
 			<div class="left">
-				<div class="logo">
-					<span class="icon-Forma_icon">
-						<span class="icon-FORMA-ICONFill"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-					</span>
-					<p>Forma’sint.</p>
-				</div>
+				<a href="#">
+					<div class="logo">
+						<div class="logoIcon">
+							<span class="icon-Forma_icon"></span>
+							<span class="icon-FORMA-ICONFill"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+						</div>
+						<p>Forma’sint.</p>
+					</div>
+				</a>
 				<p class="hideOnMobile">idomods &lt;/&gt;</p>	
 			</div>
 			<nav class="hideOnMobile">
@@ -84,8 +88,8 @@
 	<main id="productListing">
 		<div class="headline">
 			<p>Number of products per page</p>
-			<div>
-				<select id="numbersOfProducts" onchange="productListing()">
+			<div class="custom-select-wrapper">
+				<select id="numbersOfProducts" class="mySelect" onchange="productListing()">
 					<option value="14">14</option>
 					<option value="24">24</option>
 					<option value="36">36</option>

@@ -8,7 +8,10 @@ async function appednAllFeaturedProducts(){
 		let randomInt = getRandomInt(3);
 		const productTemplate = `<div class="swiper-slide">
 									<div class="productImage card">
-										<span class="icon-Icon_favorite favorite"></span>
+										<div class="favorite">
+											<span class="icon-Icon_favorite "></span>
+											<span class="icon-FAV-ICONFill "></span>
+										</div>
 										${randomInt == 2 ? '<span class="bestSeller tag">Bestseller</span>' : ''}
 										${randomInt == 0 ? '<span class="limitedEdition tag">Limited edition</span>' : ''}
 										<img src="${product.image}">

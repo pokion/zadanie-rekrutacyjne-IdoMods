@@ -19,6 +19,20 @@
 }
 .icon-FAV-ICONFill:before {
   content: "\e908";
+  opacity: 0;
+  transition: all .25s linear;
+}
+.icon-FAV-ICONFill:hover:before {
+  opacity: 1;
+  transition: all .25s linear;
+}
+.icon-FORMA-ICONFill{
+  opacity: 0;
+  transition: all .25s linear;
+}
+.icon-FORMA-ICONFill:hover{
+  opacity: 1;
+  transition: all .25s linear;
 }
 .icon-FORMA-ICONFill .path1:before {
   content: "\e909";
@@ -49,20 +63,8 @@
 .icon-Forma_icon:before {
   content: "\e904";
 }
-.icon-Forma_icon:hover:before{
-  content: '';
-}
-.icon-Forma_icon>span{
-  display: none;
-}
-.icon-Forma_icon:hover>span{
-  display: inherit;
-}
 .icon-Icon_favorite:before {
   content: "\e905";
-}
-.icon-Icon_favorite:hover:before {
-  content: "\e908";
 }
 .icon-Icon_user:before {
   content: "\e906";
